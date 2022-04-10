@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Us</title>
+        <Meta name="viewport" content="width=device-width, initial-scale=1"> 
+    </head>
+<body>
+<section>
+<div class="nav">
+</div>
+<div class="Form">
+    <form action="https://formspree.io/f/xbjwjzgw" method="POST" id="my-form">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="First Name" placeholder="Rick">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="Last Name" placeholder="James">
+        
+        <label for="email">Email</label>
+        <input type="text" id="email" name="Email Address" placeholder"123example@gmail.com">
+       
+       <label for="Country">Country</label>
+       <select id="Country" name="Country">
+           <option value="USA">America</option>
+           <option value="europe">Europe</option>
+           <option value="Middle Eastern">Middle Eastern</option>
+           <option value="Argentina">Argentina</option>
+           <option value="France">France</option>
+           <option value="Greece">Greece</option>
+           <option value="Sweden">Sweden</option>
+       </select>
+       
+       <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <br>
+        <br>
+        <button class="submit">Submit</button> 
+        <br>
+        <br>
+        <a class="btn" href="./index.html" role="button">&laquo; Home</a></p>
+    </section>    
+    </form>
+    <style>
+    .nav {
+        background-color:whitesmoke;
+        overflow:hidden;
+        }
+        .nav a {
+        float:left;
+        display:inline-block;
+        color:black;
+        text-align:center;
+        padding:14px 16px;
+        text-decoration:none;
+        font-size:20px;
+        font-style:fantasy;
+        }
+    .link {
+    float:right;
+    }
+    
+    body {font-family: Arial, Helvetica, sans-serif;}
+        section {
+         height:100%;
+    width:100%;
+    background-color:whitesmoke;
+    display:flex;
+    align-items:center;
+        justify-content: center;
+     flex-direction:column;
+     margin-top:0px;
+        }
+        .Form {
+        box-radius:5px;
+        background-color:#f2f2f2;
+        padding:15px;
+        width:100%;
+        }
+        label {
+        position:top;
+        font-size:15px;
+        font-style:fantasy;
+        }
+ input[type=text],select,textarea {
+    width: 100%;
+     padding: 12px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+     margin-bottom: 16px;
+    resize: vertical;
+    }
+    .btn {
+    padding:12px 20px;
+    color:grey;
+    background-color:whitesmoke;
+    cursor:pointer;
+    display:inline-block;
+    border:1px solid line;
+    font-size:20px;
+    }
+    button{
+    padding:12px 20px;
+    color:royalblue;
+    background-color:white;
+    border:none;
+    cursor:pointer;
+    width:100%;  
+    font-size:22px;
+    }
+    body {
+     font-family:fantasy;
+     font-size:30px;
+     
+    }
+    .link {
+    cursor:pointer;
+    float:center;
+    }
+     *{
+         padding:0;
+         margin:0;
+         box-sizing:border-box;
+     }
+    </style>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        status.innerHTML = "Thanks for your submission!";
+        form.reset()
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+
+     </script>
+</body>    
+</html>

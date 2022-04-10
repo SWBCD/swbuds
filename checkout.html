@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Shipping and Payment</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+       
+<style>
+input {
+font-size:16px;
+font-style:bold;
+border:none;
+}
+.payment{
+    text-align:center;
+    font-size:16px;
+}
+
+
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+  background-color:whitesmoke;
+}
+
+* {
+  margin:1;
+  padding:1;
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text],select#Country {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 15px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="https://formspree.io/f/xbjwjzgw" method="POST" id="my-form">
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Shipping Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="Country">Country</label>
+            <select id="Country" name="Country">
+           <option value="USA">America</option>
+           <option value="europe">Europe</option>
+           <option value="Middle Eastern">Middle Eastern</option>
+           <option value="Argentina">Argentina</option>
+           <option value="France">France</option>
+           <option value="Greece">Greece</option>
+           <option value="Sweden">Sweden</option>
+       </select>
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                 <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="Alabama">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="Huntsville">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="zipcode">Zipcode</label>
+                <input type="text" id="zipcode" name="zipcode" placeholder="10001">
+              </div>
+            </div>
+          </div>
+
+          
+          
+        </div>
+        <label>
+          <input type="checkbox" name="bitcoin"  href="#">Pay with Bitcoin
+        </label>
+        <button type="submit" class="btn" onclick="Myfunction()">Submit</button>
+    </div>
+  </div>
+  <div class="col-25">
+    <div class="container">
+      <label for="Product Amounts"><h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>1</b></span></h4></label>
+      <p><a href="product.html">Flower</a><span class="price"><select class="add" selected="selected" id="Product Amounts" name="Flower">
+                <option vlaue="0">0</option>
+                <option value="10.00">1</option>
+                <option value="30.00">3</option>
+                <option value="60.00">6</option>
+            </select></span></p>
+      <p><a href="product2.html" >Cartridge</a> <span class="price"><select class="add" selected="selected" id="Product Amounts" name="Cartridge">
+                <option vlaue="0">0</option>
+                <option value="30.00">1</option>
+                <option value="50.00">2</option>
+                <option value="70.00">3</option>
+                <option value="90.00">4
+                </option>
+            </select></span></p>
+      <p><a href="product3.html">Edibles</a> <span class="price"><select class="add" selected="selected" id="Edibles" name="Edibles">
+                <option vlaue="0">0</option>
+                <option value="20.00">Cookies</option>
+                <option value="21.00">Brownies</option>
+                <option value="25.00">Slice of Cake</option>
+            </select></span></p>
+      <hr>
+      <p><label for="total">Total <span class="price" style="color:black"><b><input disabled size="3" id="amount" ></b></span></p></label>
+    </div>
+  </div>
+</div>
+        <div class="row">
+          <div class="col-50">
+            <h3 class="payment">Express Payment</h3>
+            <div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=AakThSxE20RgxlfpHzhEE6J8ojPVJTDX7sXOf-CO2jW0PxlZ_W7kSTQEBSbuP6vXGnHNqL8AQV8svxU3&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+<script src="main.js"></script>  
+</form>
+</body>
+</html>
