@@ -79,6 +79,4 @@ const amountElement = document.getElementById("amount")
     alert("Thanks for your submisson!");
     }
 
-    function Submission(){
-      alert("Thanks for your opinion");
-    }
+  
