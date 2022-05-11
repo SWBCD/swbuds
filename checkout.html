@@ -239,7 +239,18 @@ span.price {
         <div id="paypal-button-container"></div>
       </div>
     </div>
-<script src="main.js"></script>  
+<script> 
+$(document).ready(function(){
+    $('select').change(function(){
+    var totalVal = 0;
+    $('select.add').each(function(){
+      totalVal +=  parseInt($(this).val()) ;
+      });
+      $('input#amount').val(totalVal);
+     });
+    });
+
+     </script>  
 </form>
 <style>
     #amount{
