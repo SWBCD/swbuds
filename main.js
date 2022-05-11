@@ -2,24 +2,6 @@ const amountElement = document.getElementById("amount")
 
   console.log(amountElement.value)
 
-  paypal.Buttons({
-    style: {
-      shape: 'rect',
-      color: 'silver',
-      layout: 'vertical',
-      label: 'checkout',
-      
-    },
-    // Sets up the transaction when a payment button is clicked
-    createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value:document.getElementById("amount").value, // Can reference variables or functions. Example: `value: document.getElementById('...').value`
-          }
-        }]
-      });
-    },
 
   $(document).ready(function(){
     $('select').change(function(){
