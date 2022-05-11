@@ -21,18 +21,6 @@ const amountElement = document.getElementById("amount")
       });
     },
 
-    // Finalize the transaction after payer approval
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(orderData) {
-        // Successful capture! For dev/demo purposes:
-            console.log('Capture result', orderData, JSON.stringify(orderData, null, 1));
-            var transaction = orderData.purchase_units[0].payments.captures[0];
-            const element = document.getElementById('paypal-button-container');
-            element.innerHTML = '<h3>Your transation has been completed</h3>';
-            element.innerHTML = '<h3>Thank you for your payment!</h3>';
-      });
-    }
-  }).render('#paypal-button-container');
   $(document).ready(function(){
     $('select').change(function(){
     var totalVal = 0;
