@@ -185,7 +185,7 @@ span.price {
         <label>
          
         </label>
-        <button type="submit" class="btn" onclick="Myfunction()">Submit</button>
+        <button type="submit" class="btn" onclick="Submission()">Submit</button>
     </div>
   </div>
   <div class="col-25">
@@ -245,6 +245,7 @@ span.price {
     text-align:center;
     }
 </style>
+<script src="main.js">         
 <script> 
 $(document).ready(function(){
     $('select').change(function(){
@@ -255,10 +256,6 @@ $(document).ready(function(){
       $('input#amount').val(totalVal);
      });
     });
-
-      function Myfunction(){
-    alert("Thanks for your submisson!");
-    }
 </script>  
 </body>
 </html>
