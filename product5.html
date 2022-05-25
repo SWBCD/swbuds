@@ -1,1 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Carts Overview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 4</div>
+  <img src="https://haygoodfarms.com/wp-content/uploads/2021/10/Haygood-Farms-Blue-Dream.jpg" style="width:100%">
+  <div class="text">Blue dream</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 4</div>
+  <img src="http://cdn.shopify.com/s/files/1/0252/3522/6671/products/urth-cbd-cbd-cartridge-sour-diesel-energetic-300mg-buy-cbd-online_1200x1200.png?v=1618572920" style="width:100%">
+  <div class="text">Sour Diesel</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 4</div>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd-f0SLn1h62Xve7HAJo99hooWX7y7LPdeuQ&usqp=CAU" style="width:100%">
+  <div class="text">Moonrock</div>
+</div>
+<div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkH4MY0fVKwcljFupvdjKPGKYCGFgi4Nc-qQ&usqp=CAU" style="width:100%">
+    <div class="text">Peanut butter</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
+</div>
+        <br>
+        <section class="detail-des">
+            <h2 class="heading">Description</h2>
+            <p class="des">
+                This product has been favorite for most of our customers. So we have decided to bring this back with new flavors and bigger amounts for less the cost. Classic style with a new brand we hope you enjoy this products return.
+                <br>
+                <a href="checkout.html"><button class="cart-btn">Add to Cart</button><a></a><br><a class="btn" href="./shop.html" role="button">&laquo; Store</a></p>
+            </p>
+        </section>   
+        <br>
+    <style>
+    .btn {
+    padding:12px 20px;
+    color:grey;
+    background-color:whitesmoke;
+    cursor:pointer;
+    display:inline;
+    font-size:20px;
+    }
+    
+        * {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: right;}
+
+
+.slideshow-container {
+  max-width: 120vh;
+  position: relative;
+  margin: auto;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+body{
+background-color:#f3f3f3;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.detail-des {
+    padding:0 10vw;
+    text-transform: capitalize;
+    float:left;
+}
+.heading {
+    font-size:30px;
+    margin-bottom:30px;
+}
+.des {
+    color:#383838;
+    line-height:25px;
+}
+.cart-btn {
+    width:40%;
+    padding:15px;
+    border-radius:5px;
+    background:#383838;
+    border:1px solid #383838;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    margin: 20px 0;
+    float:center;
+}
+    </style>
+    <script>
+       var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000);
+}
+
+    </script>
+</body>    
+</html>
 
