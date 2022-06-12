@@ -1,1 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Shipping and Payment</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+       
+<style>
+input {
+font-size:16px;
+font-style:bold;
+border:none;
+border-radius:16px;
+}
+.payment{
+    text-align:center;
+    font-size:16px;
+}
+select,option{
+    border:none;
+    border-radius:13px;
+   background-color:#ddd;
+}
+
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+  background-color:whitesmoke;
+}
+
+* {
+  margin:1;
+  padding:1;
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text],select#Country {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 15px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+  #amount{
+    text-align:center;
+    }
+ }
+ .g{
+  text-align:center;
+  font-size:16px;
+  font-style:arial;
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="https://formspree.io/f/xbjwjzgw" method="POST" id="my-form">
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Shipping Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+
+            <label for="Phone number"><i class="fa fa-phone"></i> Phone Number</label>
+            <input type="text" id="Phone number" name="Phone number" placeholder="843-517-6775">
+            
+           
+            <label for="Country">Country</label>
+            <select id="Country" name="Country">
+           <option value="USA">America</option>
+           <option value="europe">Europe</option>
+           <option value="Middle Eastern">Middle Eastern</option>
+           <option value="Argentina">Argentina</option>
+           <option value="France">France</option>
+           <option value="Greece">Greece</option>
+           <option value="Sweden">Sweden</option>
+       </select>
+
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" placeholder="Alabama">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="Huntsville">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="zipcode">Zipcode</label>
+                <input type="text" id="zipcode" name="zipcode" placeholder="10001">
+              </div>
+            </div>
+            <label for="Country">Delivery Preference </label>
+            <select id="Delivery Location" name="Delivery Location">
+           <option value="Anywhere">Please choose one</option>
+           <option value="Walkway">Walkway</option>
+           <option value="Mailbox">Mailbox</option>
+           <option value="Driveway">Driveway</option>
+           </select>
+          </div>
+        </div>
+        <label>
+         <p>If your order is created after 2am you will receive your package the next day</p>
+        </label>
+        <button type="submit" class="btn" onclick="Submission()">Submit</button>
+    </div>
+  </div>
+  <div class="col-25">
+    <div class="container">
+      <label for="Product Amounts"><h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>1</b></span></h4></label>
+     
+         <p><a href="product.html">Purple-Truffle</a><span class="price"><select class="add" selected="selected"  id="Product Amounts" name="Purple-Truffle">
+                <option value="0">0</option>
+                <option value="30.00">3</option>
+                <option value="60.00">7</option>
+                <option value="110.00">14</option>
+            </select></span></p>
+     
+         <p><a href="product.html">Snowman</a><span class="price"><select class="add" selected="selected"  id="Product Amounts" name="Snowman">
+                <option value="0">0</option>
+                <option value="30.00">3</option>
+                <option value="60.00">7</option>
+                <option value="110.00">14</option>
+            </select></span></p>
+
+       
+     
+      <p><a href="product.html">Chips-Ahoy</a> <span class="price"><select class="add" selected="selected" id="Product Amounts" name="THC Syrup">
+                <option value="0">0</option>
+                <option value="30.00">3</option>
+                <option value="60.00">7</option>
+                <option value="110.00">14</option>
+                </option>
+            </select></span></p>
+            
+             <p><a href="product.html">Fruity Pebbles</a> <span class="price"><select class="add" selected="selected" id="Product Amounts" name="Edibles">
+                <option vlaue="0">0</option>
+                <option value="30.00">3</option>
+                <option value="60.00">7</option>
+                <option value="110.00">14</option>
+              </select></span></p>
+          
+ 
+
+      <hr>
+      <p><label>Total <span class="price"><b><input disabled size="3" id="amount" ></b></span></label></p>
+    </div>
+  </div>
+</div>
+        <div class="row">
+          <div class="col-50">
+            <h3 class="payment">Express Payment</h3>
+           <p class="g"><a href="https://www.paypal.me/CashReckagrades
+           ">Click to  pay with Paypal</a></p>
+         <p class="g"><b>-or-</b></p>
+          <p class="g"><a href="https://cash.app/$Swbuds1">Click to pay with Cashapp</a></p>
+            <div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>  
+</form>
+<style>
+    #amount{
+    text-align:center;
+    }
+</style>
+   <script src="main.js"></script>         
+<script> 
+$(document).ready(function(){
+    $('select').change(function(){
+    var totalVal = 0;
+    $('select.add').each(function(){
+      totalVal +=  parseInt($(this).val()) ;
+      });
+      $('input#amount').val(totalVal);
+     });
+    });
+</script>  
+</body>
+</html>
 
