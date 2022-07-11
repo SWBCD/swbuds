@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Store</title>
+    <title>Shopping Center</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -18,14 +18,20 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
     <div class="header">
-    <a href="index.html" class="i"><span class="glyphicon glyphicon-home"></span>Sensational Wildfire</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="about.html">About</a>
+    <a href="index.html" class="g">SWBUDS</a>
+    <span class="i"  onclick="openNav()">&#9776;</span>
     </div>
 </head>
 <body>
-  <br>
-   <br>
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+        <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+    </div>
+  </div>
+    <br>
     <div class="container">
     <div class="row">
     <div class="col-md-4">
@@ -41,8 +47,8 @@
     <div class="col-md-4">
     <div class="card2">
         <img class="img-circle" height="200px" width="200px" src="https://www.hailmaryjane.com/wp-content/uploads/2020/07/how-to-make-thc-syrup.png.webp">
-        <h1>THC Syrup</h1>
-        <span>$25.00</span>
+        <h1>Syrup</h1>
+        <span>$30.00</span>
         <br>
         <a class="add-cart cart2"style="font-size:23px;cursor:pointer" href="product2.html"> Quick View</a>
         </div>
@@ -51,60 +57,61 @@
     <div class="col-md-4">
     <div class="card3">
         <img class="img-rounded" height="230px" width="185px" src="https://natashaskitchen.com/wp-content/uploads/2020/08/Chocolate-Brownie-Recipe-5.jpg">
-        <h1>Brownies</h1>
+        <h1>Edible's</h1>
         <span>$20.00</span>
         <br>
         <a class="add-cart cart3" style="font-size:23px;cursor:pointer" href="product3.html"> Quick View</a>
         </div>
         </div> 
-    <div class="col-md-4">
         <div class="card4">
-            <img class="img-rounded" height="240px" width="250px" src="https://joyfoodsunshine.com/wp-content/uploads/2018/02/best-chocolate-chip-cookies-recipe-1.jpg">
-            <h1>Cookies</h1>
-            <span>$20.00</span>
-            <br>
-            <a class="add-cart cart4" href="product4.html">Quick View</a>
-        </div>
-    </div>
-
+          <img class="img-rounded" height="240px" width="250px" src="https://joyfoodsunshine.com/wp-content/uploads/2018/02/best-chocolate-chip-cookies-recipe-1.jpg">
+          <h1>Cookies</h1>
+          <span>$20.00</span>
+          <br>
+          <a class="add-cart cart4" style="font-size:23px;cursor:pointer" href="product3.html"> Quick View</a>
+          </div>
+          </div> 
+        
     </div>
     </div>
     <style>
+      *{
+        padding:0;
+        margin:0;
+        box-sizing:border-box;
+      }
+        .i:hover{
+            color:white;
+        }
+        .i{
+            font-size:30px;
+            cursor:pointer;
+            margin:10px;
+            color:black;
+        }
+       .g{
+          float:right;
+        }
     .price {
     position:relative;
     }
-    p {
-    font-size:20px;
-    font-style:italic;
-    color:black;
-    
-    }
     .header {
-    background-color:#f2f2f2;
     overflow:hidden;
     }
     .header a  {
-    margin:5px;
-    float:left;
     display:inline-block;
     color:black;
     text-align:center;
     padding:14px 13px;
     text-decoration:none;
-    border-bottom:3px solid transparent;
-    font-size:17px;
     }
     .header a:hover {
-    border-bottom:3px solid blue;
-    }
-    .header a:active {
-    border-bottom:3px transparent blue;
+    color:white;
     }
     .card1:hover .cart1,
     .card2:hover .cart2,
     .card3:hover .cart3,
-    .card4:hover .cart4,
-    .card5:hover .cart5 {
+    .card4:hover .cart4 {
     bottom:100px;
     opacity:1;
     padding:10px;
@@ -119,19 +126,84 @@
     cursor:pointer;
     text-align:center;
     color:white;
-    font-size:23px;
-    cursor:pointer;
 }
-.card1,.card2,.card3,.card4,.card5 {
+.card1,.card2,.card3,.card4 {
     margin-right:20px;
     margin-left:20px;
     position:relative;
     overflow:hidden;
     text-align:center;
     width:100%;
+    color:black;
+}
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
 }
 
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-style:italic;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 33px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  font-style:inherit;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+body{
+    background: -webkit-linear-gradient(65deg, whitesmoke  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, grey 70%, orange 70%);
+    background: -o-linear-gradient(65deg,  whitesmoke  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, grey 65%, orange 65%);
+    background: -moz-linear-gradient(65deg, whitesmoke  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, grey 65%, orange 65%);
+    background: linear-gradient(65deg, whitesmoke  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, grey 65%, orange 65%);
+    height:195vh;
+    background-size:cover;
+}
 
 </style>
+<script> 
+ function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }</script>
 </body>
 </html>
