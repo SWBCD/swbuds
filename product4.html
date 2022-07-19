@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Cookie Overview</title>
+<title>Moonshine Overview</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -9,30 +9,31 @@
 
         <div class="mySlides fade">
             <div class="numbertext">1 / 4</div>
-            <img src="https://iwashyoudry.com/wp-content/uploads/2021/05/Edible-Cookie-Dough-6.jpg" style="width:100%">
-            <div class="text">Slide 1</div>
+            <img src="https://www.gonnawantseconds.com/wp-content/uploads/2018/06/Hippie-Juice-6-2-650x450.jpg" style="width:100%">
+            <div class="text">Panty Dropper</div>
         </div>
 
 
         <div class="mySlides fade">
           <div class="numbertext">2 / 4</div>
-          <img src="https://sugarspunrun.com/wp-content/uploads/2018/11/worst-chocolate-chip-cookie-recipe-1-of-1.jpg" style="width:100%">
-          <div class="text">Slide 2</div>
+          <img src="https://lh4.googleusercontent.com/3WfO8Hgpo63sTtJCJWLpOk8evtQs1qDBODcN1g8jRol4v3VAOUosUDmBuTgS5zRrgd7pIrfzz3_8wyrs3maSqZl9y6t4rUAJg2O1xSypZ4Brylh199sD31FdAHgmWl74P2gR9gaS" style="width:100%">
+          <div class="text">Blueberry</div>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">3 / 4</div>
-          <img src="https://cannabisspatula.com/wp-content/uploads/2019/11/DSC7527.jpg" style="width:100%">
-          <div class="text">Slide Three</div>
+          <img src="https://www.wideopeneats.com/wp-content/uploads/2021/01/peach-cobbler-moonshine-1-960x540.png" style="width:100%">
+          <div class="text">Peach</div>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">4 / 4</div>
-          <img src="https://sallysbakingaddiction.com/wp-content/uploads/2012/01/mm-cookies-1024x1536.jpg.webp" style="width:100%">
-          <div class="text">Slide Four</div>
+          <img src="https://inspiredbycharm.com/wp-content/uploads/2016/11/Apple-Pie-Moonshine-Recipe-1024x694.jpg" style="width:100%">
+          <div class="text">Butt-naked</div>
         </div>
         
-        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
         
         </div>
         <br>
@@ -46,10 +47,11 @@
         <section class="detail-des">
             <h2 class="heading">Description</h2>
             <p class="des">
-                  These cookies are our best edibles in our inventory made with the finest cannabutter and cannaoil. For a phenomenal experience with friends or yourself made with flower 27% or higher giving the out of world exprience you've been looking for. We hope for your return
-                   and thank you for choosing Sensational Wildfire we hope you enjoy if you have any questions or comments feel free to click on the contact us button above.
-                <br>
-                <a href="checkout4.html"><button class="cart-btn">Buy Now</button></a><br><a class="btn" href="./shop.html" role="button">&laquo; Store</a></p>
+           We would like to introduce or long awaited fourth product Moonshine. As you can tell from the pictures above we offer Peach,Blueberry,Panty Dropper and final Butt-Naked our personal favorite. For purchasing question's you will recieve all moonshine products in jars and it all smells wonderful and tastes amazing with the same effects as achol. 
+           With a stronger kick and a long lasting sensation in taste forever being special to any user so give it a try you wont regret it 
+          .And from all of the employees in sensational wildfire please drink responsibly and not kill anyone in the process.
+            <br> 
+                <a href="checkout5.html"><button class="cart-btn">Buy Now</button></a><br><a class="btn" href="./shop.html" role="button">&laquo; Store</a></p>
             </p>
         </section>   
         <br>
@@ -70,7 +72,7 @@ img {vertical-align: right;}
 
 
 .slideshow-container {
-  max-width: 120vh;
+  max-width: 110vh;
   position: relative;
   margin: auto;
 }
@@ -176,7 +178,7 @@ background-color:#f3f3f3;
     line-height:25px;
 }
 .cart-btn {
-    width:40%;
+    width:60%;
     padding:15px;
     border-radius:5px;
     background:#383838;
@@ -189,24 +191,29 @@ background-color:#f3f3f3;
 }
     </style>
     <script>
-        var slideIndex = 0;
-showSlides();
+    let slideIndex = 0;
+showSlides(slideIndex);
 
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    slides[i].style.display = "none";
   }
   slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000);
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
 }
     </script>
 </body>    
